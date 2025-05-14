@@ -1,188 +1,715 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portfolio of Olabanji Olaniyan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> 
-		<link rel="icon" type="image/png" href="images\Logo for website.png"><!--This line just helps me to put a webpage logo, i.e at the top of the page -->
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        .bg-dots {
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <span class="text-blue-800">Olabanji's</span> Portfolio
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="articles.html" class="hover:text-blue-600 transition">Articles</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menuToggle">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  <!-- Mobile Menu (Hidden by default) -->
+  <div class="md:hidden hidden px-6 pb-4 space-y-2" id="mobileMenu">
+    <a href="#about" class="block text-gray-700 hover:text-blue-600">About</a>
+    <a href="#skills" class="block text-gray-700 hover:text-blue-600">Skills</a>
+    <a href="#projects" class="block text-gray-700 hover:text-blue-600">Projects</a>
+    <a href="#experience" class="block text-gray-700 hover:text-blue-600">Experience</a>
+    <a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+  </div>
+</nav>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Olabanji Olaniyan<br />
-						Portfolio</h1>
-						<p>Experienced Data Scientist with a strong background in mathematics and economic research. I am broadly interested in the practical implementation of machine learning and deep learning. My previous research has focused on using predictive modelling for the marketing, economic and finance sectors. Skilled in statistical analysis, Python for data wrangling and analysis, SQL for querying databases, and using machine learning libraries like Scikit-learn, TensorFlow, and Keras for model building. </p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+<!-- Toggle Script -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-				<!-- Header -->
-					<header id="header">
-						<a href="https://linkedin.com/in/olabanji-olaniyan-59a6b0198" class="logo">Olabanji Olaniyan</a>
-					</header>
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+    </nav>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							<li><a href="articles.html">Articles</a></li> <!-- add the <li> whatever to add pages on your website-->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://linkedin.com/in/olabanji-olaniyan-59a6b0198" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/Banjiola" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-200">Olabanji Olaniyan</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Data Scientist & Machine Learning Engineer</h2>
+                <!--<p class="text-lg mb-8 text-blue-100 max-w-lg">
+                    Transforming raw data into actionable insights and building intelligent systems that solve real-world problems.
+                </p> -->
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
+                        Featured Projects
+                    </a>
+                    <a href="articles.html" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition">
+                        Articles
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full overflow-hidden border-4 border-white shadow-2xl transform hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <i class="fas fa-robot text-white text-8xl"></i>
+        </div>
+    </div>
+</div>
 
-				<!-- Main -->
-					<div id="main">
+        </div>
+    </header>
 
-						<!-- Featured Post -->
-						<!-- Project 1 -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a >IBM Data Science Capstone Project<br />
-									</a></h2>
-									<p>As part of the IBM Data Science specialization, I developed a machine learning pipeline to predict whether the first stage of a rocket launch by SpaceX will land successfully. SpaceX offers rocket launches at a much lower rate than its competitors, primarily due to the company's ability to reuse the first stage of its rockets. This project demonstrates my ability to apply machine learning techniques to real-world data. The specialization, which includes a series of 10 courses, provided hands-on experience with SQL and Python, helping me develop skills in data analysis, machine learning, and model deployment.</p>
-								</header>
-								<a href="https://github.com/Banjiola/Data-science-capstone-IBM" target="_blank" class="image main"><img src="images\spacex-MEW1f-yu2KI-unsplash.jpg" alt="" /></a>								
-								Photo by <a href="https://unsplash.com/@spacex?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">SpaceX</a> on <a href="https://unsplash.com/photos/twom-white-flying-rockets-during-daytime-MEW1f-yu2KI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Banjiola/Data-science-capstone-IBM" target="_blank" class="button large">View Project</a></li>
-								</ul>
-								
-							</article>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About <span class="text-blue-600">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
+                        <img src="images\cropped potrait.jpeg" 
+                             alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg mb-6">
+                        I am a data scientist with over two years of experience applying machine learning and natural language processing techniques to real-world challenges in marketing, economics, and finance.
+                        With a strong foundation in mathematics and economic research, I bring analytical depth to data-driven projects.  
 
-						<!-- Posts -->
-							<section class="posts">
-								
-								<!-- Project 2 -->
-								<article>
-									<header>
-										<h2><a href="#"> Determination of Air Quality Using Gaussian Process Regression and Other Machine Learning Models
-										</a></h2>
-									</header>
-									<a href="https://github.com/Banjiola/Determination-of-Air-Quality" target="_blank" class="image fit"><img src="images/benzene_total.png" alt="" /></a>
-									<p> Built a machine learning pipeline to predict benzene concentrations using Gaussian Process Regression (GPR) and other models. After cleaning skewed data caused by -200 null encodings, I extracted temporal features and compared four models. GPR achieved the best performance (RMSE: 2.33, R²: 0.883) and provided uncertainty estimates for more informed environmental decisions.
-									Tools: Python, scikit-learn, pandas, seaborn
-									Models: Linear Regression, SVM, Random Forest, GPR
-									
-									</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Banjiola/Determination-of-Air-Quality" target="_blank" class="button">View Project</a></li>
-									</ul>
-								</article>
-								
-								
-								
-									<!-- Project 3-->
-								<article>
-									<header>
-										<h2><a href="#"> Prediction of Customer Churn
-										</a></h2>
-									</header>
-									<a href="https://github.com/Banjiola/Predicition_of_churn_portfolio" target="_blank" class="image fit"><img src= "images/customer_loyalty_set_3.jpg" alt="" /></a>
-									<p>In this project, we aim to predict customer churn using various features such as payment methods, contract type, and whether a customer streams TV or movies. This task is crucial for companies to identify potential 'churners' and take actions to retain them.</p>
-									Photo by <a href="https://www.freepik.com/free-vector/customer-loyalty-concept-marketing-program-development-client-retention-idea-communication-relationship-with-customers-flat-vector-illustration_28157879.htm">Image by vector4stock on Freepik</a>>									<ul class="actions special">
-										<li><a href="https://github.com/Banjiola/Predicition_of_churn_portfolio" target="_blank" class="button">View Project</a></li>
-									</ul>
-								</article>
-									<!-- Project 4-->
-								<article>
-									<header>
-										<h2><a href="#"> Sentiment Analysis of Tweets using Machine Learning Models
-										</a></h2>
-									</header>
-									<a href="https://github.com/Banjiola/Sentiment-Analysis-of-Tweets" target="_blank" class="image fit"><img src= "images/Twitter-sentiment-analysis-Final.svg" alt="" /></a>
-									<p>This project tackles the SemEval-2017 Task 4A challenge: sentiment classification of English-language tweets. The goal is to classify each tweet as positive, neutral, or negative using supervised machine learning models.</p>
-										<li><a href="https://github.com/Banjiola/Sentiment-Analysis-of-Tweets" target="_blank" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<!-- Project 5 -->
-								<article>
-									<header>
-										<h2><a href="#">Analysis of Nigeria's Presidential Election(2015-2023)
-										</a></h2>
-									</header>
-									<a href="https://github.com/Banjiola/Nigeria-Election-Analysis" target="_blank" class="image fit"><img src="images\Election analysis picture for webpage.png" alt="" /></a>
-									<p>Following the tensions in Nigeria as a result of growing hardship and harsh government policies. Each faction of the country blamed the other for the selection of poor leaders 
-										which led to the hardship in the country. I carried out an analysis of the last three presidential election in Nigeria to understand how each states and geopolitical zones contributed
-										 to the election of presidential candidates in recent times. I scraped the data from wikipedia and cleaned the data using Python. I analysed the data and created visualisations with Power BI</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Banjiola/Nigeria-Election-Analysis" target="_blank" class="button">View Project</a></li>
-									</ul>
-								</article>
+                        
+                    </p>
+                    <p class="text-lg mb-6">
+                        My recent work has focused on developing predictive models and text-based solutions to support decision-making and business strategy.
+                        I hold a Master’s degree in Data Science with a specialization in Computational Intelligence from Coventry University.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span>Coventry, United Kingdom</span>
+                        </div>
+                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>B.Sc. Mathematics</span>
+                        </div>
+                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            <span>M.Sc. Data Science & Computational Intelligence</span>
+                        </div>
+                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                            <span>2+ Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <h2 class="text-3xl font-bold text-center mb-12">Professional <span class="text-blue-600">Expertise</span></h2>
+ 
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-blue-500 mr-3"></i>
+                        Technical Skills
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fas fa-robot text-green-600 text-2xl mr-3"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fas fa-language text-purple-600 text-2xl mr-3"></i>
+                            <span>Natural Language Processing</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fas fa-chart-line text-orange-600 text-2xl mr-3"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fas fa-project-diagram text-teal-600 text-2xl mr-3"></i>
+                            <span>Statistical Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-tools text-blue-500 mr-3"></i>
+                        Tools & Technologies
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fab fa-python text-blue-600 text-2xl mr-3"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fas fa-database text-blue-600 text-2xl mr-3"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" class="w-6 h-6 mr-3" alt="Jupyter">
+                            <span>Jupyter</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" class="w-6 h-6 mr-3" alt="Scikit-learn">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PyTorch_logo_icon.svg/1200px-PyTorch_logo_icon.svg.png" class="w-6 h-6 mr-3" alt="PyTorch">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png" class="w-6 h-6 mr-3" alt="Pandas">
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mt-12">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                    Certifications
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Microsoft Certification -->
+                    <div class="flex flex-col bg-yellow-50 p-4 rounded-lg h-full">
+                        <div class="flex items-start mb-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="w-10 h-10 mr-4">
+                            <div>
+                                <h4 class="font-semibold">Microsoft Certified: Azure AI Fundamentals</h4>
+                                <p class="text-sm text-gray-600">Issued by Microsoft – May 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3">
+                            <a href="https://www.credly.com/badges/87ba2cb2-9b74-4fc4-85cf-e348a808119d/linked_in_profile" target="_blank" class="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-md">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- IBM Certification -->
+                    <div class="flex flex-col bg-blue-100 p-4 rounded-lg h-full">
+                        <div class="flex items-start mb-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo" class="w-10 h-10 mr-4">
+                            <div>
+                                <h4 class="font-semibold">IBM Data Science Specialization</h4>
+                                <p class="text-sm text-gray-600">Issued by IBM – June 2024</p>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/KFUX7NMEFADL" target="_blank" class="inline-block text-sm text-white bg-gray-800 hover:bg-gray-900 px-4 py-1.5 rounded-md">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Google Certification -->
+                    <div class="flex flex-col bg-green-50 p-4 rounded-lg h-full">
+                        <div class="flex items-start mb-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="w-10 h-10 mr-4">
+                            <div>
+                                <h4 class="font-semibold">Google Data Analytics Professional Certificate</h4>
+                                <p class="text-sm text-gray-600">Issued by Google – Nov 2024</p>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-3">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/69E7821WPPSZ" target="_blank" class="inline-block text-sm text-white bg-green-600 hover:bg-green-700 px-4 py-1.5 rounded-md">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- DeepLearning.AI Certification -->
+                    <div class="flex flex-col bg-red-50 p-4 rounded-lg h-full">
+                    <div class="flex items-start mb-3">
+                        <img src=images\deeplearning_ai_logo.png alt="DeepLearning.AI Logo" class="w-10 h-10 mr-4">
+                        <div class="space-y-1">
+                    <h4 class="font-semibold">DeepLearning.AI Specialization</h4>
+                    <div class="text-sm text-gray-600">
+                        <p>Supervised ML: Regression and Classification</p>
+                        <p>Advanced Learning Algorithms</p>
+                        <p class="mt-2 italic">Issued by DeepLearning.AI – May 2025</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="mt-auto pt-3">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/IP4VVVILKD1B" target="_blank" class="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-md">
+                        View Certificate
+                        </a>
+                    </div>
+                    </div>
+
+                    <!-- PyTorch Certification -->
+                    <div class="flex flex-col bg-orange-50 p-4 rounded-lg h-full">
+                    <div class="flex items-start mb-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PyTorch_logo_icon.svg/1200px-PyTorch_logo_icon.svg.png" alt="PyTorch Logo" class="w-10 h-10 mr-4">
+                        <div>
+                        <h4 class="font-semibold">PyTorch Deep Learning</h4>
+                        <p class="text-sm text-gray-600">Deep Learning with PyTorch: Image Segmentation</p>
+                        <p class="text-sm text-gray-600">PyTorch Essential Training: Deep Learning</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto pt-3">
+                        <a href="https://www.linkedin.com/learning/certificates/6e0be702d9a7f994497e4d3893248d2e5380e30affa630c549d487b111d35c88?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BzdXF3XtTQh25SHbOh8b09A%3D%3D" target="_blank" class="inline-block text-sm text-white bg-orange-600 hover:bg-orange-700 px-4 py-1.5 rounded-md">
+                        View Certificate
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+            
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured <span class="text-blue-600">Projects</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
+                        <i class="image fit"><img src="images/benzene_total.png"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Determination of Air Quality Using Gaussian Process Regression and Other Machine Learning Models</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">ML</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Built a machine learning pipeline to predict benzene concentrations using Gaussian Process Regression (GPR) and other models. After cleaning skewed data caused by -200 null encodings, I extracted temporal features and compared four models. 
+                            GPR achieved the best performance (RMSE: 2.33, R²: 0.883) and provided uncertainty estimates for more informed environmental decisions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Scikit-learn</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Gaussian Process Regression</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">SVM</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Regression</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Banjiola/Determination-of-Air-Quality" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+    
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
+                        <i class="image fit"><img src= "images/Twitter-sentiment-analysis-Final.svg" alt=""></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Sentiment Analysis of Tweets using Machine Learning Models</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">NLP</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            This project tackles the SemEval-2017 Task 4A challenge: sentiment classification of English-language tweets. The goal is to classify each tweet as positive, neutral, or negative using supervised machine learning models.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">TF-IDF</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">BOW</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">NLTK</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Classification</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Banjiola/Sentiment-Analysis-of-Tweets" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Text Classification using Deep Learning</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">NLP</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            This project involves classifying English news headlines and short descriptions into one of four 
+                            categories: World, Sports, Business, and Sci/Tech using the AG News dataset.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">TensorFlow</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Keras</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">NLTK</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">BiLSTM</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Classification</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Banjiola/natural-language-processing/tree/main/Text_classification_using_ann" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-green-700 flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Customer Churn Prediction</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">ML</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            In this project, we aim to predict customer churn using various features such as payment methods, contract type, and whether 
+                            a customer streams TV or movies. This task is crucial for companies to identify potential 'churners' and take actions to retain them.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">scikit-learn</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">XGBoost</span>
+                            <span class="bg-gray-200 px-2 py-1 text-xs rounded">Classification</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Banjiola/Predicition_of_churn_portfolio" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/Banjiola" target="_blank" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Work <span class="text-blue-600">Experience</span></h2>
+            
+            <div class="max-w-3xl mx-auto">
+
+                <!-- Timeline item -->
+                <div class="relative pl-8 sm:pl-32 py-6 group">
+                    <div class="font-medium text-blue-600 mb-1 sm:mb-0">Data Analyst</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-gray-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-gray-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-600 bg-blue-100 rounded-full">2024 - 2025</time>
+                        <div class="text-xl font-bold text-gray-800">Techpoint Africa</div>
+                    </div>
+                    <div class="text-gray-600">
+                        <ul class="list-disc pl-5 space-y-1">
+                            
+                            <li>Automated data scraping and prepared excel files through web scraping with python</li>
+                            <li>Produced technical reports and data documentation for internal and external projects</li>
+                            <li>Published monthly economic and market research articles showcasing insights</li>
+                            <li>Designed social media insights using Microsoft Excel, Power BI, Tableau</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="relative pl-8 sm:pl-32 py-6 group">
+                    <div class="font-medium text-blue-600 mb-1 sm:mb-0">Data Analyst</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-gray-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-gray-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-600 bg-blue-100 rounded-full">2024</time>
+                        <div class="text-xl font-bold text-gray-800">Analysts'​ Data Services and Resources (ADSR) Limited</div>
+                    </div>
+                    <div class="text-gray-600">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Developed detailed process documentation and reports for data management operations.</li>                 
+                            <li>Reduced data preprocessing time by 50% using Microsoft Excel and python for data cleaning and wrangling, ensuring data accuracy and consistency</li>
+                            <li>Managed and processed data requests for clients, contributing to efficient Data Management operations</li>
+                            <li>Created visualizations and reports using Power BI for monthly releases</li>
 
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In <span class="text-blue-600">Touch</span></h2>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                    <p class="text-gray-600 mb-8">
+                        Feel free to reach out if you're looking for a data science expert, have a question, or just want to connect.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold">Email</h4>
+                                <p class="text-gray-600">banjiolaniyan123@gmail.com</p>
+                            </div>
+                        </div>
+                        
+            
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold">Location</h4>
+                                <p class="text-gray-600">United Kingdom</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/olabanji-olaniyan-data-analyst/" target="_blank" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/dashboard" target="_blank" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        
+                            <a href="https://www.kaggle.com/banjiolaniyan" target="_blank" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                                <i class="fab fa-kaggle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold mb-2">
+                        <span class="text-blue-400">Olabanji Olaniyan</span>
+                    </div>
+                    <p class="text-gray-400">Transforming data into insights and solutions.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="https://github.com/dashboard" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/olabanji-olaniyan-data-analyst/" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.kaggle.com/banjiolaniyan" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-kaggle text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 Olabanji Olaniyan. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-
-								
-								<!-- <article>
-									<header>
-				nothing for now
-										<h2><a href="#">Tableau Projects</h2>
-									</header>
-									<a href="#" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>View my data visualisations</p>
-									<ul class="actions special">
-										<li><a href="#" target="_blank" class="button">View Project</a></li>
-									</ul>
-								</article>
-								
-								<article>remove this-->
-							
-						</section>  
-					
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Coventry, United Kingdom<br />
-								</p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">banjiolaniyan123@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									
-									<li><a href="https://linkedin.com/in/olabanji-olaniyan-59a6b0198" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/Banjiola" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.1});
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // Create sample charts
+            createChart('chart1', 'line', [65, 59, 80, 81, 56, 55, 40], 'Matplotlib');
+            createChart('chart2', 'bar', [28, 48, 40, 19, 86, 27, 90], 'Seaborn');
+            createChart('chart3', 'doughnut', [30, 40, 30], 'Plotly');
+        });
+        
+        function createChart(id, type, data, label) {
+            const ctx = document.getElementById(id).getContext('2d');
+            let chart;
+            
+            if (type === 'line') {
+                chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: label,
+                            data: data,
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                display: false
+                            },
+                            x: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            } else if (type === 'bar') {
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: label,
+                            data: data,
+                            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                display: false
+                            },
+                            x: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            } else if (type === 'doughnut') {
+                chart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Data 1', 'Data 2', 'Data 3'],
+                        datasets: [{
+                            data: data,
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.7)',
+                                'rgba(99, 102, 241, 0.7)',
+                                'rgba(139, 92, 246, 0.7)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        cutout: '70%'
+                    }
+                });
+            }
+            
+            return chart;
+        }
+    </script>
+</body>
 </html>
-<!--<!-- Project 3-->

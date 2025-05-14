@@ -1,115 +1,140 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portfolio of Olabanji Olaniyan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olabanji – Blog</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#007acc',
+              secondary: '#f2f0ed',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-secondary text-gray-800">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <span class="text-blue-800">Olabanji's</span> Portfolio
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-blue-600 transition">Main Page</a>            
+                <a href="articles.html" class="hover:text-blue-600 transition">Articles</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+	<!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-200">Olabanji Olaniyan</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Data Scientist & Machine Learning Engineer</h2>
+                <!--<p class="text-lg mb-8 text-blue-100 max-w-lg">
+                    Transforming raw data into actionable insights and building intelligent systems that solve real-world problems.
+                </p> -->
+                <div class="flex space-x-4">
+                    <a href="index.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
+                        Return to Portfolio
+                    </a>
+            
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+    
+</div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Olabanji Olaniyan</a>
-					</header>
+        </div>
+    </header>
+   
+    <!-- Blog Index -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+		<h2 class="text-3xl font-bold text-center mb-12">Latest <span class="text-blue-600">blog posts</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li class="active"><a href="articles.html">Articles</a></li>
-					
-						</ul>
-						<ul class="icons">
-							<li><a href="https://linkedin.com/in/olabanji-olaniyan-59a6b0198" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/Banjiola" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+          <!-- Article 1 -->
+          <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <img src="https://intelpoint.co/wp-content/uploads/2024/11/poverty_rate_insight-3.jpg" alt="" class="rounded mb-4">
+            <h3 class="text-xl font-semibold mb-2">
+              <a href="https://intelpoint.co/blogs/nigerias-poverty-rate-trend-from1960-to-2024/" target="_blank">
+                Analysis of Poverty Rate in Nigeria (1960–2024)
+              </a>
+            </h3>
+            <p class="text-gray-600 mb-2 text-sm">(Image by <a href="https://intelpoint.co/insights/" class="text-primary" target="_blank">Intelpoint</a>)</p>
+            <p class="text-gray-600 mb-4">
+              The number of Nigerians living below the poverty line increases annually, which poses a problem for the West African nation. In this Intelpoint article, I analysed the trend of poverty in Nigeria from 1960 to 2024.
+            </p>
+            <a href="https://intelpoint.co/blogs/nigerias-poverty-rate-trend-from1960-to-2024/" target="_blank" class="text-primary font-medium">Read Article →</a>
+          </div>
+           
+          
+          <!-- Article 1 -->
+<div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+  <img src="https://intelpoint.co/wp-content/uploads/2024/07/nigerias-national-minimum-wage-increases-since-1981-669a981fe346f-scaled.webp" alt="" class="rounded mb-4">
+  <h3 class="text-xl font-semibold mb-2">
+    <a href="https://intelpoint.co/blogs/nigerias-minimum-wage-trend/" target="_blank">
+      A Trend Analysis of the National Minimum Wage in Nigeria (2000–2024)
+    </a>
+  </h3>
+  <p class="text-gray-600 mb-2 text-sm">(Image by <a href="https://intelpoint.co/insights/" class="text-primary" target="_blank">Intelpoint</a>)</p>
+  <p class="text-gray-600 mb-4">
+    The minimum wage in Nigeria has historically failed to meet the basic needs of Nigerians. The soaring costs of living in Nigeria, facilitated by numerous factors such as the devaluation of the naira and removal of the fuel subsidy in 2023, have pushed more Nigerians into financial difficulties. In this Intelpoint article, I analysed the trend of the minimum wage in Nigeria from 2020 to 2024.
+  </p>
+  <a href="https://intelpoint.co/blogs/nigerias-minimum-wage-trend/" target="_blank" class="text-primary font-medium">Read Article →</a>
+</div>
 
-				<!-- Main -->
-					<div id="main">
+<!-- Article 2 -->
+<div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+  <img src="https://intelpoint.co/wp-content/uploads/2024/08/Average-price-of-cooking-gas-per-kg-in-Nigeria-Jan-2016–June-2024-scaled.webp" alt="" class="rounded mb-4">
+  <h3 class="text-xl font-semibold mb-2">
+    <a href="https://intelpoint.co/blogs/cooking-gas-price-in-nigeria-a-trend-analysis-from-2016-to-2024/" target="_blank">
+      Cooking gas price in Nigeria (2016–2024)
+    </a>
+  </h3>
+  <p class="text-gray-600 mb-2 text-sm">(Image by <a href="https://intelpoint.co/insights/" class="text-primary" target="_blank">Intelpoint</a>)</p>
+  <p class="text-gray-600 mb-4">
+    Cooking gas price in Nigeria has increased by 235%, from ₦387 in January 2016 to ₦1,383 in October 2024. In this Intelpoint article, I analyze the trends in prices and how factors such as import dependency and the devaluation of the naira have led to this rapid increase in just 8 years.
+  </p>
+  <a href="https://intelpoint.co/blogs/cooking-gas-price-in-nigeria-a-trend-analysis-from-2016-to-2024/" target="_blank" class="text-primary font-medium">Read Article →</a>
+</div>
 
-					<!-- Post -->
-						<section class="posts">
-							<!-- Article 1-->
-							<article>
-								<header>
-									<h2><a href="https://intelpoint.co/blogs/nigerias-poverty-rate-trend-from1960-to-2024/" target="_blank">Analysis of Poverty Rate in Nigeria (1960-2024)
-									</a></h2>
-								</header>
-								<a href="https://intelpoint.co/blogs/nigerias-poverty-rate-trend-from1960-to-2024/" target="_blank" class="image fit"><img src="https://intelpoint.co/wp-content/uploads/2024/11/poverty_rate_insight-3.jpg" alt="" /></a>
-								(Image by <a href= "https://intelpoint.co/insights/">Intelpoint)</a> 
-								<p>The number of Nigerians living below the poverty line increases annually, which poses a problem for the West African nation. In this Intelpoint article, I analysed the trend of poverty in Nigeria from 1960 to 2024.</p>	
-								<ul class="actions special">
-									<li><a href="https://intelpoint.co/blogs/nigerias-poverty-rate-trend-from1960-to-2024/" target="_blank" class="button">Read Article</a></li>
-								</ul>
-							</article>
-							<!-- Article 2-->
-							<article>
-								<header>
-									<h2><a href="https://intelpoint.co/blogs/nigerias-minimum-wage-trend/" target="_blank">A Trend Analysis of the National Minimum Wage in Nigeria (2000–2024)
-									</a></h2>
-								</header>
-								<a href= "https://intelpoint.co/blogs/nigerias-minimum-wage-trend/" target="_blank" class="image fit"><img src="https://intelpoint.co/wp-content/uploads/2024/07/nigerias-national-minimum-wage-increases-since-1981-669a981fe346f-scaled.webp" alt="" /></a>
-								(Image by <a href= "https://intelpoint.co/insights/">Intelpoint)</a> 
-								<p>The minimum wage in Nigeria has historically failed to meet the basic needs of Nigerians. The soaring costs of living in Nigeria, facilitated by numerous factors such as the devaluation of the naira and removal of the fuel subsidy in 2023, have pushed more Nigerians into financial difficulties. In this Intelpoint article, I analysed the trend of the minimum wage in Nigeria from 2020 to 2024.</p>
-								<ul class="actions special">
-									<li><a href="https://intelpoint.co/blogs/nigerias-minimum-wage-trend/" target="_blank" class="button">Read Article</a></li>
-								</ul>
-							</article>
-							
-							<!-- Article 3-->
-							<article>
-								<header>
-									<h2><a href="https://intelpoint.co/blogs/cooking-gas-price-in-nigeria-a-trend-analysis-from-2016-to-2024/" target="_blank">Cooking gas price in Nigeria (2016–2024)
-									</a></h2>
-								</header>
-								<a href= "https://intelpoint.co/blogs/cooking-gas-price-in-nigeria-a-trend-analysis-from-2016-to-2024/" target="_blank" class="image fit"><img src="https://intelpoint.co/wp-content/uploads/2024/08/Average-price-of-cooking-gas-per-kg-in-Nigeria-Jan-2016–June-2024-scaled.webp"  alt="" /></a>
-								(Image by <a href= "https://intelpoint.co/insights/">Intelpoint)</a> 
-								<p>Cooking gas price in Nigeria has increased by 235%, from ₦387 in January 2016 to ₦1,383 in October 2024. In this Intelpoint article, I analyze the trends in prices and how factors such as import dependency and the devaluation of the naira have led to this rapid increase in just 8 years.</p>
-								<ul class="actions special">
-									<li><a href="https://intelpoint.co/blogs/cooking-gas-price-in-nigeria-a-trend-analysis-from-2016-to-2024/" target="_blank" class="button">Read Article</a></li>
-								</ul>
-							</article>
-							<!-- Article 4-->
-							<article>
-								<header>
-									<h2><a href="https://intelpoint.co/blogs/the-richest-country-in-africa-a-trend-analysis-from-2000-to-2024/" target="_blank">The richest country in Africa: A trend analysis from 2000 to 2024
-									</a></h2>
-								</header>
-								<a href= "https://intelpoint.co/blogs/the-richest-country-in-africa-a-trend-analysis-from-2000-to-2024/" target="_blank" class="image fit"><img src= "https://intelpoint.co/wp-content/uploads/2024/10/Africas-GDP-per-capita-1960-2023.gif" alt="" /></a>
-								(Image by <a href= "https://intelpoint.co/insights/">Intelpoint)</a> 
-								<p>Over the past 24 years, several African nations have emerged as economic powerhouses, solidifying their status as the continent's wealthiest. In this Intelpoint article, I analyze the countries that have risen and fallen in the ranks of the richest, while uncovering the key factors that have shaped their trajectories.</p>
-								<ul class="actions special">
-									<li><a href="https://intelpoint.co/blogs/the-richest-country-in-africa-a-trend-analysis-from-2000-to-2024/" target="_blank" class="button">Read Article</a></li>
-								</ul>
-							</article>
+<!-- Article 3 -->
+<div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+  <img src="https://intelpoint.co/wp-content/uploads/2024/10/Africas-GDP-per-capita-1960-2023.gif" alt="" class="rounded mb-4">
+  <h3 class="text-xl font-semibold mb-2">
+    <a href="https://intelpoint.co/blogs/the-richest-country-in-africa-a-trend-analysis-from-2000-to-2024/" target="_blank">
+      The richest country in Africa: A trend analysis from 2000 to 2024
+    </a>
+  </h3>
+  <p class="text-gray-600 mb-2 text-sm">(Image by <a href="https://intelpoint.co/insights/" class="text-primary" target="_blank">Intelpoint</a>)</p>
+  <p class="text-gray-600 mb-4">
+    Over the past 24 years, several African nations have emerged as economic powerhouses, solidifying their status as the continent's wealthiest. In this Intelpoint article, I analyze the countries that have risen and fallen in the ranks of the richest, while uncovering the key factors that have shaped their trajectories.
+  </p>
+  <a href="https://intelpoint.co/blogs/the-richest-country-in-africa-a-trend-analysis-from-2000-to-2024/" target="_blank" class="text-primary font-medium">Read Article →</a>
+</div>
 
+        </div>
+      </div>
+    </section>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Olabanji Olaniyan</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Footer -->
+    <footer class="bg-white py-6 border-t">
+      <div class="container mx-auto px-6 text-center text-sm text-gray-500">
+        © 2025 Olabanji. All rights reserved.
+      </div>
+    </footer>
+  </body>
 </html>
